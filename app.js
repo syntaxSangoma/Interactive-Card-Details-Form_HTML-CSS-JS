@@ -226,7 +226,7 @@ if (form) {
 
     localStorage.setItem("userFormData", JSON.stringify(liveData));
     e.preventDefault();
-    window.location.href = "thanks.html";
+    window.open("thanks.html", "_blank");
   });
 }
 
@@ -253,8 +253,11 @@ if (document.querySelector(".main-thanks")) {
   });
 
   document.querySelector(".continue-button").addEventListener("click", () => {
-    window.location.href =
-      "https://www.stewardbank.co.zw/for-you/cards/visa-globetrotter/";
+    window.location.href = "";
+    window.open(
+      "https://www.stewardbank.co.zw/for-you/cards/visa-globetrotter/",
+      "_blank"
+    );
   });
 }
 
