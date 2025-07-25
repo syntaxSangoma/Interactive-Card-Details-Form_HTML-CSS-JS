@@ -253,7 +253,6 @@ if (document.querySelector(".main-thanks")) {
   });
 
   document.querySelector(".continue-button").addEventListener("click", () => {
-    window.location.href = "";
     window.open(
       "https://www.stewardbank.co.zw/for-you/cards/visa-globetrotter/",
       "_blank"
