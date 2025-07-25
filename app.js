@@ -264,14 +264,3 @@ if (document.querySelector(".main-thanks")) {
     );
   });
 }
-
-if (form) {
-  window.addEventListener("DOMContentLoaded", () => {
-    const wrapper = document.querySelector(".header-wrapper");
-    wrapper.querySelector(".card-number").textContent = userData.cardNum;
-    wrapper.querySelector(".holder-name").textContent = userData.fullName;
-    wrapper.querySelector(".exp-month").textContent = userData.month;
-    wrapper.querySelector(".exp-year").textContent = userData.year;
-    wrapper.querySelector(".CVC").textContent = userData.cvc;
-  });
-}
