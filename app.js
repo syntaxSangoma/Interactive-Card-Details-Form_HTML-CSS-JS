@@ -1,5 +1,11 @@
 const form = document.querySelector("#cardDetailsForm");
-const liveData = {};
+const liveData = {
+  fullName: "Jane Appleseed",
+  cardNum: "0000 0000 0000 0000",
+  month: "00",
+  year: "00",
+  cvc: "000",
+};
 
 if (form) {
   const inputs = form.querySelectorAll("input");
@@ -28,6 +34,28 @@ if (form) {
         liveData[name] = formatted;
       } else {
         liveData[name] = e.target.value;
+      }
+
+      const wrapper = document.querySelector(".header-wrapper");
+      if (wrapper) {
+        if (name === "cardNum")
+          wrapper.querySelector(".card-number").textContent =
+            liveData.cardNum.padEnd(19, "•");
+        if (name === "fullName")
+          wrapper.querySelector(".holder-name").textContent = liveData.fullName;
+        if (name === "month")
+          wrapper.querySelector(".exp-month").textContent =
+            liveData.month.padEnd(2, "•");
+        if (name === "year")
+          wrapper.querySelector(".exp-year").textContent = liveData.year.padEnd(
+            2,
+            "•"
+          );
+        if (name === "cvc")
+          wrapper.querySelector(".CVC").textContent = liveData.cvc.padEnd(
+            3,
+            "•"
+          );
       }
 
       validateInput(input);
