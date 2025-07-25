@@ -302,6 +302,10 @@ input[name="cardNum"].invalid,
   display: none;
 }
 
+.expiry-wrapper .message {
+  max-width: 152px;
+}
+
 .error-message {
   color: var(--ERROR-MESSAGE);
 }
@@ -574,6 +578,10 @@ input[name="cardNum"].invalid,
 
   .date-container {
     gap: 0.625rem;
+  }
+
+  .expiry-wrapper .message {
+    max-width: 170px;
   }
 
   .submit-button {

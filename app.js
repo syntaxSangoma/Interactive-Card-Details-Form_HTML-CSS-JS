@@ -7,7 +7,13 @@ if (form) {
 
   inputs.forEach((input) => {
     input.addEventListener("keypress", (e) => {
-      if (input.name === "cardNum" && /\D/.test(e.key)) {
+      if (
+        (input.name === "cardNum" ||
+          input.name === "month" ||
+          input.name === "year" ||
+          input.name === "cvc") &&
+        /\D/.test(e.key)
+      ) {
         e.preventDefault();
       }
     });
@@ -31,7 +37,13 @@ if (form) {
     input.addEventListener("paste", (e) => {
       const pasted = (e.clipboardData || window.clipboardData).getData("text");
 
-      if (input.name === "cardNum" && /\D/.test(pasted)) {
+      if (
+        (input.name === "cardNum" ||
+          input.name === "month" ||
+          input.name === "year" ||
+          input.name === "cvc") &&
+        /\D/.test(pasted)
+      ) {
         e.preventDefault();
         showMessage(input, "Numbers only.", true);
         return;
@@ -75,13 +87,6 @@ if (form) {
     } else if (input.name === "cvc") {
       if (!/^\d{3}$/.test(value)) {
         isValid = setError(input, message, "CVC must be exactly 3 digits.");
-      }
-    } else {
-      if (input.getAttribute("inputmode") === "numeric") {
-        input.value = value.replace(/\D/g, "");
-        if (!/^\d+$/.test(input.value)) {
-          isValid = setError(input, message, "Numbers only.");
-        }
       }
     }
 
